@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import BreakLength from "./features/breaklength/BreakLength";
+import SessionLength from "./features/sessionlength/SessionLength";
+import Session from "./features/session/Session";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>25 + 5 Clock</h1>
+      <div className="length-container">
+        <BreakLength />
+        <SessionLength />
+      </div>
+      <Session />
     </div>
   );
 }
