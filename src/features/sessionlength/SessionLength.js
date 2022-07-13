@@ -9,7 +9,7 @@ function BreakLength() {
 
   return (
     <div className="length">
-      <h3 id="session-length">Break Length</h3>
+      <h3 id="session-length">Session Length</h3>
       <div>
         <button
           className="session-increment"
