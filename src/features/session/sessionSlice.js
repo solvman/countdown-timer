@@ -15,8 +15,15 @@ export const sessionSlice = createSlice({
     setTimerOn: (state, action) => {
       state.timerOn = action.payload;
     },
+    setTimer: (state, action) => {
+      state.timer = action.payload;
+    },
+    setDefault: (state) => {
+      state.timer = initialState.timer;
+    },
   },
 });
 
 export default sessionSlice.reducer;
-export const { decrement, setTimerOn } = sessionSlice.actions;
+export const { decrement, setTimerOn, setTimer, setDefault } =
+  sessionSlice.actions;

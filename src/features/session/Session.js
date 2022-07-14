@@ -2,6 +2,9 @@ import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { decrement, setTimerOn } from "./sessionSlice";
+import { setDefault as setDefaultBreakLength } from "../breaklength/breakLengthSlice";
+import { setDefault as setDefaultSessionLength } from "../sessionlength/sessionLengthSlice";
+import { setDefault as setDefaultSession } from "../session/sessionSlice";
 import {
   MdPauseCircleFilled,
   MdPlayCircleFilled,
@@ -27,6 +30,12 @@ function Session() {
     };
   }, [timerOn, dispatch]);
 
+  const ResetTimer = () => {
+    dispatch(setDefaultSession());
+    dispatch(setDefaultBreakLength());
+    dispatch(setDefaultSessionLength());
+  };
+
   return (
     <div className="session">
       <h3>Session</h3>
@@ -42,7 +51,7 @@ function Session() {
         <button disabled={!timerOn} onClick={() => dispatch(setTimerOn(false))}>
           <MdPauseCircleFilled />
         </button>
-        <button disabled={timerOn}>
+        <button disabled={timerOn} onClick={ResetTimer}>
           <MdReplayCircleFilled />
         </button>
       </div>

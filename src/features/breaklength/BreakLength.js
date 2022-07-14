@@ -5,6 +5,7 @@ import { BsArrowDownCircleFill, BsArrowUpCircleFill } from "react-icons/bs";
 
 function BreakLength() {
   const breaklength = useSelector((state) => state.break.value);
+  const timerOn = useSelector((state) => state.session.timerOn);
   const dispatch = useDispatch();
 
   return (
@@ -12,6 +13,7 @@ function BreakLength() {
       <h3 id="break-length">Break Length</h3>
       <div>
         <button
+          disabled={timerOn}
           className="break-increment"
           onClick={() => dispatch(decrement())}
         >
@@ -21,6 +23,7 @@ function BreakLength() {
           {breaklength < 10 ? `0${breaklength}` : breaklength}
         </span>
         <button
+          disabled={timerOn}
           className="break-decrement"
           onClick={() => dispatch(increment())}
         >

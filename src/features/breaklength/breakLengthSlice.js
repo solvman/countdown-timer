@@ -18,8 +18,11 @@ export const breakLengthSlice = createSlice({
         state.value--;
       }
     },
+    setDefault: (state) => {
+      state.value = initialState.value;
+    },
   },
 });
 
 export default breakLengthSlice.reducer;
-export const { increment, decrement } = breakLengthSlice.actions;
+export const { increment, decrement, setDefault } = breakLengthSlice.actions;

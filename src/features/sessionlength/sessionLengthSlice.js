@@ -18,8 +18,11 @@ export const sessionLengthSlice = createSlice({
         state.value--;
       }
     },
+    setDefault: (state) => {
+      state.value = initialState.value;
+    },
   },
 });
 
 export default sessionLengthSlice.reducer;
-export const { increment, decrement } = sessionLengthSlice.actions;
+export const { increment, decrement, setDefault } = sessionLengthSlice.actions;
