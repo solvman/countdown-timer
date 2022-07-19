@@ -13,6 +13,12 @@ export const sessionSlice = createSlice({
     decrement: (state) => {
       state.timer--;
     },
+    decrementByMinute: (state) => {
+      if (state.timer > 60) state.timer -= 60;
+    },
+    incrementByMinute: (state) => {
+      if (state.timer < 60 * 60) state.timer += 60;
+    },
     setTimerOn: (state, action) => {
       state.timerOn = action.payload;
     },
@@ -31,5 +37,12 @@ export const sessionSlice = createSlice({
 });
 
 export default sessionSlice.reducer;
-export const { decrement, setTimerOn, setTimer, setDefault, setTimerType } =
-  sessionSlice.actions;
+export const {
+  decrement,
+  setTimerOn,
+  setTimer,
+  setDefault,
+  setTimerType,
+  decrementByMinute,
+  incrementByMinute,
+} = sessionSlice.actions;

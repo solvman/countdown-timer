@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setTimer } from "../session/sessionSlice";
+import { decrementByMinute, incrementByMinute } from "../session/sessionSlice";
 import { increment, decrement } from "./sessionLengthSlice";
 import { BsArrowDownCircleFill, BsArrowUpCircleFill } from "react-icons/bs";
 
@@ -11,26 +11,26 @@ function BreakLength() {
 
   return (
     <div className="length">
-      <h3 id="session-length">Session Length</h3>
+      <h3 id="session-label">Session Length</h3>
       <div>
         <button
           disabled={timerOn}
-          className="session-decrement"
+          id="session-decrement"
           onClick={() => {
-            dispatch(setTimer(sessionlength * 60 - 60));
+            dispatch(decrementByMinute());
             dispatch(decrement());
           }}
         >
           <BsArrowDownCircleFill />
         </button>
-        <span className="length--counter">
-          {sessionlength < 10 ? `0${sessionlength}` : sessionlength}
+        <span className="length--counter" id="session-length">
+          {sessionlength}
         </span>
         <button
           disabled={timerOn}
-          className="session-increment"
+          id="session-increment"
           onClick={() => {
-            dispatch(setTimer(sessionlength * 60 + 60));
+            dispatch(incrementByMinute());
             dispatch(increment());
           }}
         >

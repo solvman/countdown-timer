@@ -81,6 +81,8 @@ h1 {
 
 .length--counter {
   font-size: 2rem;
+  width: 2.25rem;
+  text-align: center;
 }
 
 .session {

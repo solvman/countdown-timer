@@ -10,21 +10,21 @@ function BreakLength() {
 
   return (
     <div className="length">
-      <h3 id="break-length">Break Length</h3>
+      <h3 id="break-label">Break Length</h3>
       <div>
         <button
           disabled={timerOn}
-          className="break-increment"
+          id="break-decrement"
           onClick={() => dispatch(decrement())}
         >
           <BsArrowDownCircleFill />
         </button>
-        <span className="length--counter">
-          {breaklength < 10 ? `0${breaklength}` : breaklength}
+        <span className="length--counter" id="break-length">
+          {breaklength}
         </span>
         <button
           disabled={timerOn}
-          className="break-decrement"
+          id="break-increment"
           onClick={() => dispatch(increment())}
         >
           <BsArrowUpCircleFill />
