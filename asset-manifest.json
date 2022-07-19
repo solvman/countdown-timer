@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/countdown-timer/static/css/main.762d4898.css",
+    "main.js": "/countdown-timer/static/js/main.e414db6b.js",
+    "static/media/beepSoundEffect.mp3": "/countdown-timer/static/media/beepSoundEffect.e86d78f9998b98234c8d.mp3",
+    "index.html": "/countdown-timer/index.html",
+    "main.762d4898.css.map": "/countdown-timer/static/css/main.762d4898.css.map",
+    "main.e414db6b.js.map": "/countdown-timer/static/js/main.e414db6b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.762d4898.css",
+    "static/js/main.e414db6b.js"
+  ]
+}
